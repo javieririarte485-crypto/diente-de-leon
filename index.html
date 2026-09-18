@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="Odontopediatría en Apizaco, Tlaxcala. Atención dental para bebés, niños y adolescentes con calma y sin prisas. C.D.E.E.P. Amine León.">
+<meta name="theme-color" content="#FFF3CE">
+<link rel="icon" href="/assets/logo-sm.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Diente de León — Odontología Pediátrica en Apizaco">
+<meta property="og:description" content="Cuidamos la boca de bebés, niños y adolescentes con calma, tiempo y explicaciones claras.">
+<meta property="og:image" content="/assets/hero-doctora-web.jpg">
+<meta property="og:locale" content="es_MX">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<![CDATA[<helmet>
+  <title>Diente de León — Odontología Pediátrica</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Nunito+Sans:ital,opsz,wght@0,6..12,300;0,6..12,400;0,6..12,600;0,6..12,700;1,6..12,400&display=swap" rel="stylesheet" />
+  <style>
+    html { scroll-behavior: smooth; scroll-padding-top: 84px; -webkit-text-size-adjust: 100%; }
+    html { scroll-behavior: smooth; scroll-padding-top: 92px; }
+    body { margin: 0; background-color: #FFFBF3; color: #14648A; font-family: "Nunito Sans", system-ui, sans-serif; font-weight: 400; -webkit-font-smoothing: antialiased; text-wrap: pretty; overflow-x: hidden; }
+    * { box-sizing: border-box; }
+    a { color: #B22F59; text-decoration: none; transition: color .25s ease; }
+    a:hover { color: #1B7FB0; }
+    button { font-family: inherit; }
+    @keyframes ddl-float { 0%,100% { transform: translateY(0) rotate(-2deg); } 50% { transform: translateY(-7px) rotate(2deg); } }
+    @keyframes ddl-blink { 0%,92%,100% { transform: scaleY(1); } 96% { transform: scaleY(.15); } }
+    ::selection { background: #FFE3A3; color: #1B7FB0; }
+  </style>
+</helmet>
+
+<div aria-hidden="true" style="position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.16;background-image:url('assets/patron-tile.jpg');background-repeat:repeat;background-size:460px auto"></div>
+
+<div style="position:relative;z-index:1;max-width:100vw">
+
+  <header style="position:sticky;top:0;z-index:60;background:#FFF3CE;border-bottom:1px solid #FFE3A3">
+    <div style="max-width:1280px;margin:0 auto;padding:14px 20px;display:flex;align-items:center;gap:20px;justify-content:space-between">
+      <a href="#top" aria-label="Diente de León — Odontología Pediátrica" style="display:block;flex:none">
+        <img src="assets/logo-sm.png" alt="Diente de León, Odontología Pediátrica" style="display:block;width:clamp(92px,10vw,118px);height:auto;mix-blend-mode:multiply;opacity:.45;transition:opacity .3s ease" style-hover="opacity:1" />
+      </a>
+
+      <sc-if value="{{ isWide }}" hint-placeholder-val="{{ true }}">
+        <nav style="display:flex;align-items:center;gap:26px">
+          <a href="#conoce" style="font-size:13.5px;color:#0B4A68;letter-spacing:.01em">Nosotros</a>
+          <a href="#doctora" style="font-size:13.5px;color:#0B4A68;letter-spacing:.01em">Doctora</a>
+          <a href="#casos" style="font-size:13.5px;color:#0B4A68;letter-spacing:.01em">Casos</a>
+          <a href="#primera-visita" style="font-size:13.5px;color:#0B4A68;letter-spacing:.01em">Primera visita</a>
+          <a href="#consultorio" style="font-size:13.5px;color:#0B4A68;letter-spacing:.01em">Consultorio</a>
+          <a href="#consejos" style="font-size:13.5px;color:#0B4A68;letter-spacing:.01em">Consejos</a>
+          <a href="#agenda" style="display:inline-flex;align-items:center;height:44px;padding:0 22px;border-radius:2px;background:#0B4A68;color:#FFFBF3;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase" style-hover="background:#E5638A;color:#FFF">Agendar cita</a>
+        </nav>
+      </sc-if>
+
+      <sc-if value="{{ isNarrow }}" hint-placeholder-val="{{ false }}">
+        <div style="display:flex;align-items:center;gap:10px">
+          <a href="#agenda" style="display:inline-flex;align-items:center;height:44px;padding:0 16px;border-radius:2px;background:#0B4A68;color:#FFFBF3;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase">Agendar</a>
+          <button type="button" onClick="{{ toggleMenu }}" aria-label="Menú" style="width:44px;height:44px;border:1px solid #FFE3A3;background:#E4F2FA;border-radius:2px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;cursor:pointer;padding:0">
+            <span style="display:block;width:18px;height:1.4px;background:#0B4A68"></span>
+            <span style="display:block;width:18px;height:1.4px;background:#0B4A68"></span>
+          </button>
+        </div>
+      </sc-if>
+    </div>
+
+    <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+      <nav style="border-top:1px solid #FFE3A3;background:#FFF3CE;padding:8px 20px 22px;display:flex;flex-direction:column">
+        <a href="#conoce" onClick="{{ closeMenu }}" style="padding:15px 0;border-bottom:1px solid #FFE3A3;font-family:'DM Serif Display',Georgia,serif;font-size:22px;color:#14648A">Nosotros</a>
+        <a href="#casos" onClick="{{ closeMenu }}" style="padding:15px 0;border-bottom:1px solid #FFE3A3;font-family:'DM Serif Display',Georgia,serif;font-size:22px;color:#14648A">Casos reales</a>
+        <a href="#consultorio" onClick="{{ closeMenu }}" style="padding:15px 0;border-bottom:1px solid #FFE3A3;font-family:'DM Serif Display',Georgia,serif;font-size:22px;color:#14648A">El consultorio</a>
+        <a href="#consejos" onClick="{{ closeMenu }}" style="padding:15px 0;border-bottom:1px solid #FFE3A3;font-family:'DM Serif Display',Georgia,serif;font-size:22px;color:#14648A">Consejos</a>
+        <a href="#agenda" onClick="{{ closeMenu }}" style="padding:15px 0;font-family:'DM Serif Display',Georgia,serif;font-size:22px;color:#14648A">Contacto</a>
+      </nav>
+    </sc-if>
+  </header>
+
+  <sc-if value="{{ onePage }}" hint-placeholder-val="{{ true }}">
+  <!-- HERO -->
+  <section id="top" data-screen-label="Hero" style="position:relative;padding:clamp(44px,7vw,96px) 20px clamp(56px,7vw,104px);max-width:1280px;margin:0 auto;overflow:hidden;min-height:clamp(520px,72vh,760px);display:flex;flex-direction:column;justify-content:center">
+    <div aria-hidden="true" style="position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);pointer-events:none">
+      <img src="assets/logo-linea-sm.jpg" alt="" style="display:block;width:100%;height:auto;opacity:.22" />
+    </div>
+    <div aria-hidden="true" style="position:absolute;inset:0;background:rgba(255,251,243,.55);pointer-events:none"></div>
+    <sc-if value="{{ mascot }}" hint-placeholder-val="{{ true }}">
+      <div aria-hidden="true" style="position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);pointer-events:none">
+        <div style="position:relative;width:100%;padding-top:66.67%">
+          <img src="assets/chuleton-sm.png" alt="" style="position:absolute;left:54%;top:20%;transform:translate(-50%,-42%);width:min(450px,42%);height:auto;animation:ddl-float 7s ease-in-out infinite" />
+        </div>
+      </div>
+    </sc-if>
+    <div data-reveal="" style="position:relative;max-width:740px;margin:0;text-align:left">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:clamp(22px,3vw,30px)">
+        <span style="width:24px;height:1px;background:#E5638A"></span>
+        <span style="font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:#B22F59;font-weight:700">Odontopediatría · Apizaco, Tlaxcala</span>
+      </div>
+      <h1 style="font-family:'DM Serif Display',Georgia,serif;font-weight:400;font-size:clamp(40px,7.6vw,80px);line-height:1.0;letter-spacing:-0.02em;margin:0 0 clamp(20px,2.6vw,26px);text-wrap:balance">Una sonrisa sana comienza <em style="font-style:italic;color:#B22F59">desde pequeños.</em></h1>
+      <p style="font-size:clamp(15.5px,1.6vw,19px);line-height:1.6;color:#4A4B52;margin:0 0 clamp(28px,3.4vw,36px);max-width:44ch">Cuidamos la boca de bebés, niños y adolescentes con calma, tiempo y explicaciones claras — para que cada visita sea una buena experiencia.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:12px">
+        <a href="#agenda" style="display:inline-flex;align-items:center;justify-content:center;min-height:54px;padding:0 32px;border-radius:2px;background:#0B4A68;color:#FFFBF3;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase" style-hover="background:#E5638A;color:#FFF">Agendar cita</a>
+        <a href="#conoce" style="display:inline-flex;align-items:center;justify-content:center;min-height:54px;padding:0 32px;border-radius:2px;border:1px solid #FFD35C;color:#14648A;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;background:transparent" style-hover="border-color:#14648A;background:#FFF3CE">Conócenos</a>
+      </div>
+    </div>
+
+  </section>
+  </sc-if>
+
+  <sc-if value="{{ onePage }}" hint-placeholder-val="{{ true }}">
+  <!-- CONOCE -->
+  <section id="conoce" data-screen-label="Conoce Diente de León" style="background:#FFF3CE;padding:clamp(56px,8vw,110px) 20px">
+    <div style="max-width:1280px;margin:0 auto">
+      <div data-reveal="" style="max-width:760px;margin-bottom:clamp(36px,5vw,64px)">
+        <span style="font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:#B22F59;font-weight:700">Conoce Diente de León</span>
+        <h2 style="font-family:'DM Serif Display',Georgia,serif;font-weight:400;font-size:clamp(29px,4.6vw,50px);line-height:1.12;letter-spacing:-0.01em;margin:16px 0 20px">Un espacio creado para que los niños aprendan a amar el cuidado de su sonrisa.</h2>
+        <p style="font-size:clamp(14.5px,1.4vw,17px);line-height:1.7;color:#4A4B52;margin:0;max-width:56ch">Creemos que una visita al dentista puede ser una experiencia positiva, tranquila y llena de confianza — para tu hijo y para ti.</p>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:clamp(20px,3vw,40px)">
+        <div data-reveal="" style="border-top:1px solid #FFE3A3;padding-top:22px">
+          <span style="font-family:'DM Serif Display',Georgia,serif;font-size:15px;color:#B22F59">01</span>
+          <h3 style="font-family:'DM Serif Display',Georgia,serif;font-weight:400;font-size:clamp(21px,2.2vw,26px);margin:10px 0 12px;line-height:1.2">Odontología pediátrica</h3>
+          <p style="font-size:14.5px;line-height:1.65;color:#4A4B52;margin:0 0 20px">Formación especializada en bebés, niños y adolescentes: cada edad necesita un abordaje distinto.</p>
+          <div style="position:relative;background:#FFF0C2;border-radius:3px;overflow:hidden;aspect-ratio:3/2.1">
+            <img src="assets/paciente-pequeno.jpg" loading="lazy" decoding="async" alt="Paciente pequeña practicando con un peluche" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 42%" />
+          </div>
+        </div>
+        <div data-reveal="" style="border-top:1px solid #FFE3A3;padding-top:22px">
+          <span style="font-family:'DM Serif Display',Georgia,serif;font-size:15px;color:#B22F59">02</span>
+          <h3 style="font-family:'DM Serif Display',Georgia,serif;font-weight:400;font-size:clamp(21px,2.2vw,26px);margin:10px 0 12px;line-height:1.2">Experiencias positivas</h3>
+          <p style="font-size:14.5px;line-height:1.65;color:#4A4B52;margin:0 0 20px">Explicamos, jugamos y acompañamos. La confianza se construye desde la primera visita.</p>
+          <div style="position:relative;background:#FFF0C2;border-radius:3px;overflow:hidden;aspect-ratio:3/2.1">
+            <img src="assets/post-consulta.jpg" loading="lazy" decoding="async" alt="Dos pacientes con la doctora al terminar su consulta" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 60%" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  </sc-if>
+
+  <sc-if value="{{ onePage }}" hint-placeholder-val="{{ true }}">
+  <!-- DOCTORA -->
+  <section id="doctora" data-screen-label="Doctora" style="padding:clamp(56px,8vw,120px) 20px;max-width:1280px;margin:0 auto">
+    <div style="display:flex;flex-wrap:wrap;gap:clamp(28px,4vw,64px);align-items:flex-start">
+      <div data-reveal="" style="flex:1 1 320px;min-width:270px;position:relative">
+        <div style="position:relative;background:#DCEDF7;border-radius:3px;overflow:hidden;aspect-ratio:4/5">
+          <img src="assets/dra-amine.jpg" loading="lazy" decoding="async" alt="La C.D.E.E.P. Amine León en el congreso AMiT Múnich 2022" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 28%" />
+        </div>
+        <div style="position:absolute;right:16px;bottom:-26px;background:#FFD35C;color:#0B4A68;border-radius:2px;padding:14px 18px;max-width:230px;display:flex;flex-direction:column;gap:8px">
+          <p style="margin:0;font-size:12px;line-height:1.35;font-weight:700;letter-spacing:.02em">Especialista en Odontopediatría</p>
+          <div style="display:flex;flex-direction:column;gap:3px;padding-top:8px;border-top:1px solid rgba(11,74,104,.28)">
+            <p style="margin:0;font-size:11.5px;line-height:1.4;font-weight:700">Ced. 7514706</p>
+            <p style="margin:0;font-size:11.5px;line-height:1.4;font-weight:700">Ced. Esp. 12171926</p>
+          </div>
+        </div>
+      </div>
+
+      <div data-reveal="" style="flex:1 1 360px;min-width:280px;padding-top:clamp(24px,3vw,40px)">
+        <span style="font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:#B22F59;font-weight:700">Conoce a tu odontopediatra</span>
+        <h2 style="font-family:'DM Serif Display',Georgia,serif;font-weight:400;font-size:clamp(30px,4.4vw,48px);line-height:1.08;margin:16px 0 6px">C.D.E.E.P. Amine León</h2>
+        <p style="font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:#B22F59;font-weight:700;margin:0 0 28px">Odontopediatra</p>
+        <blockquote style="margin:0 0 32px;padding-left:20px;border-left:1px solid #E1D5C9">
+          <p style="font-family:'DM Serif Display',Georgia,serif;font-style:italic;font-size:clamp(18px,2.2vw,24px);line-height:1.45;color:#14648A;margin:0">“Mi objetivo es que cada niño salga del consultorio sintiéndose orgulloso de su sonrisa y de lo que logró.”</p>
+        </blockquote>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:20px 28px;margin-bottom:34px">
+          <sc-for list="{{ credentials }}" as="cr" hint-placeholder-count="4">
+            <div style="border-top:1px solid #F3E7CB;padding-top:12px">
+              <p style="margin:0 0 4px;font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:#B22F59;font-weight:700">{{ cr.label }}</p>
+              <p style="margin:0;font-size:14.5px;line-height:1.5;color:#4A4B52">{{ cr.value }}</p>
+            </div>
+          </sc-for>
+        </div>
+        <a href="#agenda" style="display:inline-flex;align-items:center;gap:10px;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#14648A;border-bottom:1px solid #0B4A68;padding-bottom:8px" style-hover="color:#B22F59;border-color:#B22F59">Conoce más sobre mí →</a>
+      </div>
+    </div>
+  </section>
+  </sc-if>
+
+
+  <sc-if value="{{ onePage }}" hint-placeholder-val="{{ true }}">
+  <!-- CASOS REALES -->
+  <section id="casos" data-screen-label="Casos reales" style="padding:clamp(56px,8vw,110px) 20px;max-width:1280px;margin:0 auto">
+    <div data-reveal="" style="max-width:640px;margin-bottom:clamp(28px,4vw,46px)">
+      <span style="font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:#B22F59;font-weight:700">Casos reales</span>
+      <h2 style="font-family:'DM Serif Display',Georgia,serif;font-weight:400;font-size:clamp(29px,4.6vw,50px);line-height:1.1;margin:16px 0 18px">El trabajo, en detalle.</h2>
+      <p style="font-size:15px;line-height:1.7;color:#4A4B52;margin:0">Casos clínicos reales, autorizados por las familias. Desliza el control para ver el antes y el después.</p>
+    </div>
+
+    <div data-reveal="" style="display:flex;flex-wrap:wrap;gap:10px;margin-bottom:24px">
+      <sc-for list="{{ caseTabs }}" as="t" hint-placeholder-count="5">
+        <button type="button" onClick="{{ t.onSelect }}" style="cursor:pointer;border:1px solid {{ t.border }};background:{{ t.bg }};color:{{ t.color }};border-radius:999px;min-height:40px;padding:0 18px;font-size:12.5px;font-weight:600;letter-spacing:.02em;transition:all .3s ease" style-hover="border-color:#14648A">{{ t.label }}</button>
+      </sc-for>
+    </div>
+
+    <div style="display:flex;flex-wrap:wrap;gap:clamp(24px,3vw,48px);align-items:center">
+      <div data-reveal="" style="flex:1 1 380px;min-width:280px">
+        <div ref="{{ baRef }}" onPointerDown="{{ baDown }}" onPointerMove="{{ baMove }}" onPointerUp="{{ baUp }}" style="position:relative;border-radius:3px;overflow:hidden;aspect-ratio:4/4.4;touch-action:none;cursor:ew-resize;user-select:none;background:#DCEDF7">
+          <div style="position:absolute;inset:0;background:#DCEDF7">
+            <img src="assets/caso-despues.jpg" loading="lazy" decoding="async" alt="Después del tratamiento" draggable="false" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 42%;user-select:none;pointer-events:none" />
+            <div style="position:absolute;right:14px;top:14px;background:rgba(255,251,243,.95);border-radius:2px;padding:6px 10px;font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#14648A">Después</div>
+          </div>
+          <div style="position:absolute;top:0;bottom:0;left:0;overflow:hidden;width:{{ baPct }}">
+            <div style="position:absolute;top:0;left:0;height:100%;width:{{ baInvW }};background:#FFF0C2">
+              <img src="assets/caso-antes.jpg" loading="lazy" decoding="async" alt="Antes del tratamiento" draggable="false" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 34%;user-select:none;pointer-events:none" />
+              <div style="position:absolute;left:14px;top:14px;background:rgba(255,251,243,.95);border-radius:2px;padding:6px 10px;font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#B22F59">Antes</div>
+            </div>
+          </div>
+          <div style="position:absolute;top:0;bottom:0;width:1.5px;background:rgba(255,251,243,.97);left:{{ baPct }};pointer-events:none">
+            <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:44px;height:44px;border-radius:50%;background:#FFFBF3;box-shadow:0 6px 18px rgba(60,40,30,.18);display:flex;align-items:center;justify-content:center;gap:3px">
+              <span style="font-size:12px;color:#14648A;letter-spacing:-1px">◄►</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div data-reveal="" style="flex:1 1 300px;min-width:260px">
+        <p style="margin:0 0 8px;font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:#B22F59;font-weight:700">{{ activeCase.tag }}</p>
+        <h3 style="font-family:'DM Serif Display',Georgia,serif;font-weight:400;font-size:clamp(24px,3vw,32px);line-height:1.15;margin:0 0 16px">{{ activeCase.title }}</h3>
+        <p style="font-size:15px;line-height:1.7;color:#4A4B52;margin:0 0 12px">{{ activeCase.diag }}</p>
+        <p style="font-size:15px;line-height:1.7;color:#4A4B52;margin:0">{{ activeCase.treat }}</p>
+      </div>
+    </div>
+  </section>
+  </sc-if>
+
+  <sc-if value="{{ onePage }}" hint-placeholder-val="{{ true }}">
+  <!-- PRIMERA VISITA -->
+  <section id="primera-visita" data-screen-label="Primera visita" style="padding:clamp(56px,8vw,110px) 20px;max-width:1280px;margin:0 auto">
+    <div style="display:flex;flex-wrap:wrap;gap:clamp(28px,4vw,72px);align-items:flex-start">
+      <div data-reveal="" style="flex:1 1 300px;min-width:270px;position:sticky;top:110px">
+        <span style="font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:#B22F59;font-weight:700">Primera visita</span>
+        <h2 style="font-family:'DM Serif Display',Georgia,serif;font-weight:400;font-size:clamp(29px,4.4vw,46px);line-height:1.08;margin:16px 0 18px">¿Es la primera vez que visitamos al dentista?</h2>
+        <p style="font-size:15px;line-height:1.7;color:#4A4B52;margin:0 0 26px;max-width:40ch">Es normal tener dudas. Aquí te contamos, con calma, todo lo que pasa antes, durante y después de la cita.</p>
+        <sc-if value="{{ mascot }}" hint-placeholder-val="{{ true }}">
+          <div style="display:flex;align-items:center;gap:14px;background:#FFF3CE;border:1px solid #FFD35C;border-radius:3px;padding:14px 16px;max-width:360px">
+            <img src="assets/chuleton-sm.png" alt="Chuletón" loading="lazy" decoding="async" style="width:70px;height:auto;flex:none;animation:ddl-float 8s ease-in-out infinite" />
+            <p style="margin:0;font-size:13.5px;line-height:1.55;color:#4A4B52">“Soy Chuletón. ¿Es tu primera visita? Te cuento qué puedes esperar.”</p>
+          </div>
+        </sc-if>
+      </div>
+
+      <div style="flex:1 1 420px;min-width:280px">
+        <sc-for list="{{ faqs }}" as="f" hint-placeholder-count="6">
+          <div data-reveal="" style="border-bottom:1px solid #FFE3A3">
+            <button type="button" onClick="{{ f.onToggle }}" style="width:100%;display:flex;align-items:center;justify-content:space-between;gap:18px;text-align:left;background:transparent;border:0;cursor:pointer;padding:22px 2px;min-height:56px;color:{{ f.color }};transition:color .3s ease" style-hover="color:#B22F59">
+              <span style="font-family:'DM Serif Display',Georgia,serif;font-size:clamp(17.5px,2vw,21px);line-height:1.3">{{ f.q }}</span>
+              <span style="font-size:19px;line-height:1;flex:none;color:#B22F59;transition:transform .35s ease;transform:{{ f.iconT }}">+</span>
+            </button>
+            <div style="overflow:hidden;transition:max-height .45s cubic-bezier(.22,.7,.25,1),opacity .35s ease;max-height:{{ f.maxH }};opacity:{{ f.op }}">
+              <p style="font-size:14.5px;line-height:1.7;color:#4A4B52;margin:0 0 24px;max-width:56ch">{{ f.a }}</p>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+  </sc-if>
+
+  <sc-if value="{{ onePage }}" hint-placeholder-val="{{ true }}">
+  <!-- CONSULTORIO -->
+  <section id="consultorio" data-screen-label="El consultorio" style="background:#FFF3CE;padding:clamp(56px,8vw,110px) 0">
+    <div style="max-width:1280px;margin:0 auto;padding:0 20px;display:flex;flex-wrap:wrap;gap:20px;align-items:flex-end;justify-content:space-between;margin-bottom:clamp(26px,4vw,44px)">
+      <div data-reveal="" style="max-width:600px">
+        <span style="font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:#B22F59;font-weight:700">El consultorio</span>
+        <h2 style="font-family:'DM Serif Display',Georgia,serif;font-weight:400;font-size:clamp(29px,4.6vw,50px);line-height:1.1;margin:16px 0 0">Haz un recorrido antes de venir.</h2>
+      </div>
+      <div style="display:flex;gap:10px">
+        <button type="button" onClick="{{ galPrev }}" aria-label="Anterior" style="width:48px;height:48px;border-radius:50%;border:1px solid #FFD35C;background:transparent;color:#14648A;cursor:pointer;font-size:15px" style-hover="background:#E4F2FA;border-color:#14648A">←</button>
+        <button type="button" onClick="{{ galNext }}" aria-label="Siguiente" style="width:48px;height:48px;border-radius:50%;border:1px solid #FFD35C;background:transparent;color:#14648A;cursor:pointer;font-size:15px" style-hover="background:#E4F2FA;border-color:#14648A">→</button>
+      </div>
+    </div>
+    <div data-gallery="" style="display:flex;gap:clamp(12px,1.6vw,22px);overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 20px 22px;scrollbar-width:none">
+      <figure style="flex:0 0 min(78vw,420px);margin:0;scroll-snap-align:start">
+        <div style="position:relative;background:#DCEDF7;border-radius:3px;overflow:hidden;aspect-ratio:3/2.2">
+          <img src="assets/entrada.jpg" alt="Entrada del consultorio decorada, con la doctora y dos pacientes" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 45%" />
+        </div>
+        <figcaption style="margin-top:12px;display:flex;align-items:baseline;gap:10px">
+          <span style="font-family:'DM Serif Display',Georgia,serif;font-size:19px">Entrada</span>
+          <span style="font-size:12.5px;color:#B22F59">Atención cercana desde la puerta</span>
+        </figcaption>
+      </figure>
+      <figure style="flex:0 0 min(78vw,420px);margin:0;scroll-snap-align:start">
+        <div style="position:relative;background:#DCEDF7;border-radius:3px;overflow:hidden;aspect-ratio:3/2.2">
+          <img src="assets/area-clinica.jpg" alt="Área clínica con sillón dental azul, lámpara y unidad de trabajo" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 52%" />
+        </div>
+        <figcaption style="margin-top:12px;display:flex;align-items:baseline;gap:10px">
+          <span style="font-family:'DM Serif Display',Georgia,serif;font-size:19px">Área clínica</span>
+          <span style="font-size:12.5px;color:#B22F59">Sillón dental azul</span>
+        </figcaption>
+      </figure>
+      <figure style="flex:0 0 min(78vw,420px);margin:0;scroll-snap-align:start">
+        <div style="position:relative;background:#DCEDF7;border-radius:3px;overflow:hidden;aspect-ratio:3/3.6">
+          <img src="assets/rincon-chuleton.jpg" alt="Rincón de espera con el peluche de Chuletón, sillón rosa y el letrero de Diente de León" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:48% 55%" />
+        </div>
+        <figcaption style="margin-top:12px;display:flex;align-items:baseline;gap:10px">
+          <span style="font-family:'DM Serif Display',Georgia,serif;font-size:19px">Rincón de Chuletón</span>
+          <span style="font-size:12.5px;color:#B22F59">Peluches y espera infantil</span>
+        </figcaption>
+      </figure>
+      <figure style="flex:0 0 min(78vw,420px);margin:0;scroll-snap-align:start">
+        <div style="position:relative;background:#DCEDF7;border-radius:3px;overflow:hidden;aspect-ratio:3/2.2">
+          <img src="assets/ig-cepillado-peluche.jpg" alt="Paciente practicando el cepillado con un peluche" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 40%" />
+        </div>
+        <figcaption style="margin-top:12px;display:flex;align-items:baseline;gap:10px">
+          <span style="font-family:'DM Serif Display',Georgia,serif;font-size:19px">Enseñamos a cepillar</span>
+          <span style="font-size:12.5px;color:#B22F59">Técnica guiada en cada visita</span>
+        </figcaption>
+      </figure>
+      <figure style="flex:0 0 min(78vw,420px);margin:0;scroll-snap-align:start">
+        <div style="position:relative;background:#DCEDF7;border-radius:3px;overflow:hidden;aspect-ratio:3/2.2">
+          <img src="assets/diploma-cero-caries.jpg" alt="Paciente con su Diploma Cero Caries" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:52% 12%" />
+        </div>
+        <figcaption style="margin-top:12px;display:flex;align-items:baseline;gap:10px">
+          <span style="font-family:'DM Serif Display',Georgia,serif;font-size:19px">Diplomas</span>
+          <span style="font-size:12.5px;color:#B22F59">“Paciente Estrella” y “Caries Cero”</span>
+        </figcaption>
+      </figure>
+      <figure style="flex:0 0 min(78vw,420px);margin:0;scroll-snap-align:start">
+        <div style="position:relative;background:#DCEDF7;border-radius:3px;overflow:hidden;aspect-ratio:3/2.2">
+          <img src="assets/higiene.jpg" alt="Carro de instrumental preparado junto al sillón dental" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:55% 50%" />
+        </div>
+        <figcaption style="margin-top:12px;display:flex;align-items:baseline;gap:10px">
+          <span style="font-family:'DM Serif Display',Georgia,serif;font-size:19px">Higiene</span>
+          <span style="font-size:12.5px;color:#B22F59">Protocolos de esterilización</span>
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+  </sc-if>
+
+  <sc-if value="{{ onePage }}" hint-placeholder-val="{{ true }}">
+  <!-- CONSEJOS -->
+  <section id="consejos" data-screen-label="Consejos" style="background:#E4F2FA;border-top:1px solid #FFE3A3;padding:clamp(56px,8vw,110px) 20px">
+    <div style="max-width:1280px;margin:0 auto">
+      <div data-reveal="" style="display:flex;flex-wrap:wrap;gap:18px;align-items:flex-end;justify-content:space-between;margin-bottom:clamp(28px,4vw,48px)">
+        <div>
+          <span style="font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:#B22F59;font-weight:700">Consejos para papás</span>
+          <h2 style="font-family:'DM Serif Display',Georgia,serif;font-weight:400;font-size:clamp(29px,4.6vw,50px);line-height:1.1;margin:16px 0 0">Lo que más nos preguntan.</h2>
+        </div>
+        <a href="#agenda" style="font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#14648A;border-bottom:1px solid #FFD35C;padding-bottom:6px" style-hover="border-color:#B22F59">Ver todos →</a>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:clamp(18px,2.4vw,32px)">
+        <a href="#agenda" data-reveal="" style="display:block;color:#14648A">
+          <div style="position:relative;background:#DCEDF7;border-radius:3px;overflow:hidden;aspect-ratio:3/2.2">
+            <img src="assets/bebe-revision.jpg" alt="La doctora revisando a una paciente muy pequeña en el sillón dental" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:52% 42%" />
+          </div>
+          <p style="margin:16px 0 8px;font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:#B22F59;font-weight:700">Prevención</p>
+          <h3 style="font-family:'DM Serif Display',Georgia,serif;font-weight:400;font-size:clamp(20px,2.2vw,25px);line-height:1.25;margin:0 0 10px">¿Cuándo debe ser la primera visita?</h3>
+          <p style="font-size:14px;line-height:1.65;color:#4A4B52;margin:0">La respuesta corta: antes de lo que imaginas. Te explicamos por qué.</p>
+        </a>
+        <a href="#agenda" data-reveal="" style="display:block;color:#14648A">
+          <div style="position:relative;background:#DCEDF7;border-radius:3px;overflow:hidden;aspect-ratio:3/2.2">
+            <img src="assets/colacion-saludable.jpg" alt="Lámina de colación saludable en la sala de espera del consultorio" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 45%" />
+          </div>
+          <p style="margin:16px 0 8px;font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:#B22F59;font-weight:700">Alimentación</p>
+          <h3 style="font-family:'DM Serif Display',Georgia,serif;font-weight:400;font-size:clamp(20px,2.2vw,25px);line-height:1.25;margin:0 0 10px">¿Cuánto azúcar puede consumir mi hijo?</h3>
+          <p style="font-size:14px;line-height:1.65;color:#4A4B52;margin:0">No es solo cuánta, también cuándo y cómo. Tres reglas fáciles de seguir.</p>
+        </a>
+        <a href="#agenda" data-reveal="" style="display:block;color:#14648A">
+          <div style="position:relative;background:#DCEDF7;border-radius:3px;overflow:hidden;aspect-ratio:3/2.2">
+            <img src="assets/cepillado.jpg" loading="lazy" decoding="async" alt="Paciente practicando el cepillado con un peluche" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:38% 62%" />
+          </div>
+          <p style="margin:16px 0 8px;font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:#B22F59;font-weight:700">Rutina</p>
+          <h3 style="font-family:'DM Serif Display',Georgia,serif;font-weight:400;font-size:clamp(20px,2.2vw,25px);line-height:1.25;margin:0 0 10px">¿Cómo cepillar los dientes de mi pequeño?</h3>
+          <p style="font-size:14px;line-height:1.65;color:#4A4B52;margin:0">Técnica, cantidad de pasta y trucos para que deje de ser una batalla.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+  </sc-if>
+
+  <sc-if value="{{ onePage }}" hint-placeholder-val="{{ true }}">
+  <!-- TESTIMONIOS -->
+  <section data-screen-label="Testimonios" style="position:relative;padding:clamp(64px,9vw,130px) 20px;background:transparent;border-top:3px solid #FFD35C;border-bottom:3px solid #FFD35C"><div aria-hidden="true" style="position:absolute;inset:0;pointer-events:none;opacity:.5;background-image:url('assets/patron-tile.jpg');background-repeat:repeat;background-size:400px auto"></div><div aria-hidden="true" style="position:absolute;inset:0;pointer-events:none;background:rgba(255,243,206,.55)"></div>
+    <div data-reveal="" style="position:relative;max-width:820px;margin:0 auto;text-align:center">
+      <p style="margin:0 0 26px;font-size:14px;letter-spacing:.32em;color:#B22F59">★★★★★</p>
+      <p style="margin:-14px 0 26px;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:#4A4B52;font-weight:700">5.0 en Google · Diente de León Odontopediatra</p>
+      <blockquote style="margin:0 0 30px">
+        <p style="font-family:'DM Serif Display',Georgia,serif;font-style:italic;font-weight:400;font-size:clamp(23px,3.6vw,40px);line-height:1.32;letter-spacing:-0.01em;margin:0;color:#14648A;min-height:3.9em;display:flex;align-items:center;justify-content:center">“{{ activeQuote.text }}”</p>
+      </blockquote>
+      <p style="margin:0 0 34px;font-size:13px;letter-spacing:.05em;color:#4A4B52">— {{ activeQuote.author }}</p>
+      <div style="display:flex;align-items:center;justify-content:center;gap:22px">
+        <button type="button" onClick="{{ quotePrev }}" aria-label="Anterior" style="width:48px;height:48px;border-radius:50%;border:1px solid #FFD35C;background:transparent;cursor:pointer;color:#14648A" style-hover="background:#E4F2FA;border-color:#14648A">←</button>
+        <span style="font-size:12.5px;letter-spacing:.14em;color:#4A4B52;font-variant-numeric:tabular-nums">{{ quoteCounter }}</span>
+        <button type="button" onClick="{{ quoteNext }}" aria-label="Siguiente" style="width:48px;height:48px;border-radius:50%;border:1px solid #FFD35C;background:transparent;cursor:pointer;color:#14648A" style-hover="background:#E4F2FA;border-color:#14648A">→</button>
+      </div>
+    </div>
+  </section>
+  </sc-if>
+
+  <sc-if value="{{ onePage }}" hint-placeholder-val="{{ true }}">
+  <!-- AGENDA -->
+  <section id="agenda" data-screen-label="Agenda tu cita" style="padding:clamp(60px,8vw,120px) 20px;max-width:1280px;margin:0 auto">
+    <div data-reveal="" style="display:flex;flex-wrap:wrap;gap:clamp(28px,4vw,64px);align-items:center">
+      <div style="flex:1 1 340px;min-width:280px">
+        <sc-if value="{{ mascot }}" hint-placeholder-val="{{ true }}">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:18px">
+            <img src="assets/chuleton-sm.png" alt="Chuletón" loading="lazy" decoding="async" style="width:62px;height:auto;flex:none;animation:ddl-float 9s ease-in-out infinite" />
+            <p style="margin:0;font-size:13px;line-height:1.5;color:#4A4B52">“Aquí te esperamos.” — Chuletón</p>
+          </div>
+        </sc-if>
+        <span style="font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:#B22F59;font-weight:700">Agenda tu cita</span>
+        <h2 style="font-family:'DM Serif Display',Georgia,serif;font-weight:400;font-size:clamp(32px,5.4vw,58px);line-height:1.05;margin:16px 0 22px">¿Listos para conocer<br />Diente de León?</h2>
+        <p style="font-size:15.5px;line-height:1.7;color:#4A4B52;margin:0 0 30px;max-width:44ch">Escríbenos y con gusto te ayudamos a encontrar el horario que mejor funcione para tu familia.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:12px">
+          <a href="#agenda" style="display:inline-flex;align-items:center;justify-content:center;min-height:54px;padding:0 32px;border-radius:2px;background:#0B4A68;color:#FFFBF3;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase" style-hover="background:#E5638A;color:#FFF">Agendar cita</a>
+          <a href="https://wa.me/522228639447" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;gap:11px;min-height:54px;padding:0 26px;border-radius:2px;background:#1BAF4B;color:#FFFFFF;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase" style-hover="background:#159440">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="flex:none"><path d="M3 3h16.5a1.5 1.5 0 0 1 1.5 1.5v11.7a1.5 1.5 0 0 1-1.5 1.5H8.4L3 22.5V3Zm3.6 4.2v1.9h9.3V7.2H6.6Zm0 3.4v1.9h9.3v-1.9H6.6Zm0 3.4v1.9h5.4v-1.9H6.6Z" /></svg>
+            Contáctanos por WhatsApp
+          </a>
+        </div>
+      </div>
+      <div style="flex:1 1 340px;min-width:270px;display:grid;gap:1px;background:#FFE3A3;border:1px solid #FFE3A3;border-radius:3px;overflow:hidden">
+        <div style="background:#E4F2FA;padding:24px 26px">
+          <p style="margin:0 0 8px;font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:#B22F59;font-weight:700">Visítanos</p>
+          <p style="margin:0;font-size:15.5px;line-height:1.6;color:#14648A">Av. Ignacio Zaragoza 700, San Martín de Porres</p>
+          <p style="margin:4px 0 0;font-size:13px;line-height:1.6;color:#4A4B52">90300 Apizaco, Tlaxcala · Atención con cita previa</p>
+        </div>
+        <div style="background:#E4F2FA;padding:24px 26px">
+          <p style="margin:0 0 8px;font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:#B22F59;font-weight:700">Teléfono y WhatsApp</p>
+          <p style="margin:0;font-size:15.5px;line-height:1.6;color:#14648A">+52 222 863 9447</p>
+          <p style="margin:4px 0 0;font-size:13px;line-height:1.6;color:#4A4B52">Respondemos en menos de 24 horas</p>
+        </div>
+        <div style="background:#E4F2FA;padding:24px 26px">
+          <p style="margin:0 0 12px;font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:#B22F59;font-weight:700">Horarios</p>
+          <sc-for list="{{ hours }}" as="h" hint-placeholder-count="3">
+            <div style="display:flex;flex-wrap:wrap;gap:6px 18px;justify-content:space-between;padding:7px 0;border-bottom:1px solid #FFE3A3">
+              <span style="font-size:14px;color:#14648A">{{ h.day }}</span>
+              <span style="font-size:14px;color:#4A4B52;font-variant-numeric:tabular-nums">{{ h.time }}</span>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+
+    <div data-reveal="" style="margin-top:clamp(28px,4vw,48px);border:1px solid #FFE3A3;border-radius:3px;overflow:hidden;background:#FFF3CE">
+      <iframe title="Ubicación de Diente de León en Apizaco, Tlaxcala" src="https://www.google.com/maps?q=Av.%20Ignacio%20Zaragoza%20700,%20San%20Martin%20de%20Porres,%2090300%20Apizaco,%20Tlaxcala&output=embed" loading="lazy" style="display:block;width:100%;height:clamp(240px,34vw,380px);border:0;filter:saturate(.72) contrast(.96)"></iframe>
+      <div style="display:flex;flex-wrap:wrap;gap:1px;background:#FFE3A3;border-top:1px solid #FFE3A3">
+        <a href="https://www.google.com/maps/dir/?api=1&destination=Av.+Ignacio+Zaragoza+700,+San+Martin+de+Porres,+90300+Apizaco,+Tlaxcala" target="_blank" rel="noopener" style="flex:1 1 160px;background:#E4F2FA;color:#14648A;text-align:center;padding:18px 12px;font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase" style-hover="background:#FFF3CE;color:#B22F59">Cómo llegar</a>
+        <a href="tel:+522228639447" style="flex:1 1 160px;background:#E4F2FA;color:#14648A;text-align:center;padding:18px 12px;font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase" style-hover="background:#FFF3CE;color:#B22F59">Llamar</a>
+        <a href="https://wa.me/522228639447" target="_blank" rel="noopener" style="flex:1 1 160px;background:#1BAF4B;color:#FFFFFF;display:flex;align-items:center;justify-content:center;gap:9px;padding:18px 12px;font-size:11.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase" style-hover="background:#159440">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="flex:none"><path d="M3 3h16.5a1.5 1.5 0 0 1 1.5 1.5v11.7a1.5 1.5 0 0 1-1.5 1.5H8.4L3 22.5V3Zm3.6 4.2v1.9h9.3V7.2H6.6Zm0 3.4v1.9h9.3v-1.9H6.6Zm0 3.4v1.9h5.4v-1.9H6.6Z" /></svg>
+          WhatsApp
+        </a>
+        <a href="https://wa.me/522228639447" target="_blank" rel="noopener" style="flex:1 1 160px;background:#0B4A68;color:#FFFBF3;text-align:center;padding:18px 12px;font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase" style-hover="background:#E5638A;color:#FFF">Agendar cita</a>
+      </div>
+    </div>
+  </section>
+  </sc-if>
+
+  <sc-if value="{{ onePage }}" hint-placeholder-val="{{ true }}">
+  <!-- INSTAGRAM -->
+  <section data-screen-label="Instagram" style="border-top:1px solid #FFE3A3;background:#E4F2FA;padding:clamp(44px,6vw,80px) 20px">
+    <div style="max-width:1280px;margin:0 auto">
+      <div data-reveal="" style="display:flex;flex-wrap:wrap;gap:16px;align-items:baseline;justify-content:space-between;margin-bottom:24px">
+        <div style="display:flex;align-items:center;gap:clamp(14px,1.8vw,22px)">
+          <span aria-hidden="true" style="flex:none;display:flex;align-items:center;justify-content:center;width:clamp(48px,5.4vw,62px);height:clamp(48px,5.4vw,62px);border-radius:16px;background:#B22F59;color:#FFFBF3;box-shadow:0 8px 20px rgba(178,47,89,.24)">
+            <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" style="display:block"><rect x="3" y="3" width="18" height="18" rx="5" ry="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"></circle></svg>
+          </span>
+          <div>
+            <span style="font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:#B22F59;font-weight:700">Síguenos en Instagram</span>
+            <h2 style="font-family:'DM Serif Display',Georgia,serif;font-weight:400;font-size:clamp(24px,3.4vw,36px);line-height:1.15;margin:12px 0 0">El día a día del consultorio</h2>
+          </div>
+        </div>
+        <a href="https://www.instagram.com/dientedeleon_odontopediatra/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:9px;font-size:13.5px;font-weight:700;letter-spacing:.02em;color:#FFFBF3;background:#14648A;border-radius:999px;padding:12px 20px" style-hover="background:#B22F59">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" aria-hidden="true" style="flex:none;display:block"><rect x="3" y="3" width="18" height="18" rx="5" ry="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"></circle></svg>
+          @dientedeleon_odontopediatra
+        </a>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:clamp(8px,1.2vw,14px)">
+        <sc-for list="{{ instagram }}" as="p" hint-placeholder-count="4">
+          <a href="https://www.instagram.com/dientedeleon_odontopediatra/" target="_blank" rel="noopener" data-reveal="" style="display:block;position:relative;background:#DCEDF7;border-radius:2px;overflow:hidden;aspect-ratio:1/1" style-hover="outline:3px solid #FFD35C;outline-offset:-3px">
+            <img src="{{ p.src }}" alt="{{ p.alt }}" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block" />
+            <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(11,74,104,.62) 0%,rgba(11,74,104,0) 52%)"></div>
+            <span aria-hidden="true" style="position:absolute;top:10px;right:10px;display:flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:10px;background:rgba(255,251,243,.94);color:#B22F59">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="display:block"><rect x="3" y="3" width="18" height="18" rx="5" ry="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"></circle></svg>
+            </span>
+            <div style="position:absolute;inset:0;display:flex;align-items:flex-end;padding:12px"><span style="font-size:11px;line-height:1.35;font-weight:700;letter-spacing:.02em;color:#FFFBF3">{{ p.alt }}</span></div>
+          </a>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+  </sc-if>
+
+
+  <a href="{{ waLink }}" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp" style="position:fixed;right:clamp(16px,2.4vw,28px);bottom:{{ waBottom }};z-index:95;display:flex;align-items:center;gap:11px;height:56px;padding:0 20px 0 16px;border-radius:999px;background:#25D366;color:#0B3D22;box-shadow:0 10px 28px rgba(28,111,138,.22),0 2px 6px rgba(0,0,0,.10)" style-hover="background:#1FBE59;color:#062E19">
+    <svg viewBox="0 0 32 32" width="26" height="26" aria-hidden="true" style="flex:none;display:block">
+      <path fill="currentColor" d="M16.03 4.5c-6.35 0-11.5 5.15-11.5 11.5 0 2.03.53 3.94 1.47 5.6L4.5 27.5l6.06-1.47a11.45 11.45 0 0 0 5.47 1.39c6.35 0 11.5-5.15 11.5-11.5S22.38 4.5 16.03 4.5Zm0 20.7c-1.77 0-3.43-.47-4.86-1.29l-.35-.2-3.6.87.9-3.5-.22-.36a9.2 9.2 0 1 1 8.13 4.48Zm5.3-6.88c-.29-.15-1.72-.85-1.98-.95-.27-.1-.46-.15-.65.15-.19.29-.75.95-.92 1.14-.17.19-.34.22-.63.07-.29-.14-1.08-.4-2.06-1.27a7.9 7.9 0 0 1-1.45-1.8c-.15-.29-.02-.45.12-.6.14-.14.31-.36.46-.55.15-.19.2-.31.29-.5.1-.19.05-.36-.02-.5-.07-.15-.65-1.58-.89-2.16-.23-.56-.47-.49-.65-.5h-.55c-.19 0-.5.07-.75.36-.27.29-1.03 1-1.03 2.44 0 1.43 1.05 2.82 1.2 3.01.14.19 2.03 3.24 4.96 4.43 2.44.98 2.93.79 3.46.74.53-.05 1.72-.7 1.96-1.38.24-.68.24-1.26.17-1.38-.07-.12-.26-.19-.55-.34Z" />
+    </svg>
+    <span style="display:flex;flex-direction:column;line-height:1.15">
+      <span style="font-size:12.5px;font-weight:700;letter-spacing:.02em">WhatsApp</span>
+      <span style="font-size:10.5px;opacity:.75">Respondemos rápido</span>
+    </span>
+  </a>
+
+
+  <a href="{{ igLink }}" target="_blank" rel="noopener" aria-label="Síguenos en Instagram" style="position:fixed;right:clamp(16px,2.4vw,28px);bottom:{{ igBottom }};z-index:95;display:flex;align-items:center;justify-content:center;width:56px;height:56px;border-radius:999px;background:#B22F59;color:#FFFBF3;box-shadow:0 10px 28px rgba(11,74,104,.24),0 2px 6px rgba(0,0,0,.10)" style-hover="background:#0B4A68;color:#FFD35C">
+    <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" aria-hidden="true" style="flex:none;display:block"><rect x="3" y="3" width="18" height="18" rx="5" /><circle cx="12" cy="12" r="4" /><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none" /></svg>
+  </a>
+
+  <footer style="background:#0B4A68;color:#F3E7CB;padding:clamp(48px,6vw,80px) 20px clamp(28px,4vw,40px)">
+    <div style="max-width:1280px;margin:0 auto">
+      <div style="display:flex;flex-wrap:wrap;gap:36px;justify-content:space-between;padding-bottom:36px;border-bottom:1px solid rgba(255,227,163,.24)">
+        <div style="flex:1 1 260px">
+          <div style="background:#FFF3CE;border-radius:3px;padding:12px 14px;display:inline-block;margin-bottom:18px">
+            <img src="assets/logo-sm.png" alt="Diente de León" style="display:block;width:min(240px,60vw);height:auto;mix-blend-mode:multiply" />
+          </div>
+          <p style="margin:0 0 16px;font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:#FFD35C;font-weight:600">Odontopediatría · Apizaco, Tlaxcala</p>
+          <p style="margin:0;font-size:14px;line-height:1.7;color:#D8EBF6">Av. Ignacio Zaragoza 700, San Martín de Porres<br />90300 Apizaco, Tlaxcala<br />+52 222 863 9447</p>
+        </div>
+        <div style="flex:0 1 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:28px 48px">
+          <div style="display:flex;flex-direction:column;gap:12px">
+            <a href="#conoce" style="color:#F3E7CB;font-size:14px" style-hover="color:#FFE3A3">Nosotros</a>
+            <a href="#conoce" style="color:#F3E7CB;font-size:14px" style-hover="color:#FFE3A3">La doctora</a>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:12px">
+            <a href="#casos" style="color:#F3E7CB;font-size:14px" style-hover="color:#FFE3A3">Casos reales</a>
+            <a href="#consultorio" style="color:#F3E7CB;font-size:14px" style-hover="color:#FFE3A3">Primera visita</a>
+            <a href="#consejos" style="color:#F3E7CB;font-size:14px" style-hover="color:#FFE3A3">Consejos</a>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:12px">
+            <a href="https://www.instagram.com/dientedeleon_odontopediatra/" target="_blank" rel="noopener" style="color:#F3E7CB;font-size:14px" style-hover="color:#FFE3A3">Instagram</a>
+            <a href="https://wa.me/522228639447" target="_blank" rel="noopener" style="color:#F3E7CB;font-size:14px" style-hover="color:#FFE3A3">WhatsApp</a>
+            <a href="tel:+522228639447" style="color:#F3E7CB;font-size:14px" style-hover="color:#FFE3A3">Llamar</a>
+          </div>
+        </div>
+      </div>
+      <div style="padding-top:22px;display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between">
+        <p style="margin:0;font-size:12px;color:#A8CBE0">© 2026 Diente de León. Todos los derechos reservados.</p>
+        <p style="margin:0;font-size:12px;color:#A8CBE0"><a href="/aviso-de-privacidad" style="color:#FFD35C" style-hover="color:#FFFBF3">Aviso de privacidad</a> · Ced. 7514706 · Ced. Esp. 12171926</p>
+      </div>
+    </div>
+  </footer>
+
+  <sc-if value="{{ showStickyCta }}" hint-placeholder-val="{{ false }}">
+    <div style="position:fixed;left:0;right:0;bottom:0;z-index:70;padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:rgba(255,251,243,.95);backdrop-filter:blur(14px);border-top:1px solid #FFE3A3;display:flex;gap:10px">
+      <a href="#agenda" style="flex:1;display:inline-flex;align-items:center;justify-content:center;min-height:50px;border-radius:2px;background:#0B4A68;color:#FFFBF3;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase">Agendar cita</a>
+      <a href="https://wa.me/522228639447" target="_blank" rel="noopener" aria-label="Contáctanos por WhatsApp" style="width:56px;display:inline-flex;align-items:center;justify-content:center;min-height:50px;border-radius:2px;background:#1BAF4B;color:#FFFFFF">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 3h16.5a1.5 1.5 0 0 1 1.5 1.5v11.7a1.5 1.5 0 0 1-1.5 1.5H8.4L3 22.5V3Zm3.6 4.2v1.9h9.3V7.2H6.6Zm0 3.4v1.9h9.3v-1.9H6.6Zm0 3.4v1.9h5.4v-1.9H6.6Z" /></svg>
+      </a>
+    </div>
+  </sc-if>
+
+</div>]]>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;mascotVisible&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Marca&quot;},&quot;servicesInteraction&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;clic&quot;,&quot;hover&quot;],&quot;default&quot;:&quot;clic&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Interacción&quot;},&quot;revealOnScroll&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Interacción&quot;}}">
+class Component extends DCLogic {
+  static PAGES = ['inicio','nosotros','servicios','casos','consultorio','consejos','contacto'];
+
+  state = {
+    page: 'inicio',
+    isNarrow: false, ready: false, menuOpen: false,
+    openService: 0, caseIdx: 0, ba: 48, baDrag: false,
+    openFaq: 0, quote: 0
+  };
+
+  baRef = React.createRef();
+  galRef = React.createRef();
+
+  pageFromHash() {
+    let h = (window.location.hash || '').replace(/^#\/?/, '');
+    if (h === 'doctora') h = 'nosotros';
+    if (h === 'primera-visita') h = 'consultorio';
+    return Component.PAGES.indexOf(h) >= 0 ? h : 'inicio';
+  }
+
+  componentDidMount() {
+
+    this.sync = () => {
+      const n = window.innerWidth < 900;
+      if (n !== this.state.isNarrow || !this.state.ready) this.setState({ isNarrow: n, ready: true });
+    };
+    this.sync();
+    window.addEventListener('resize', this.sync);
+
+    this.io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { this.show(e.target); this.io.unobserve(e.target); }
+      });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.05 });
+
+    this.scan = () => {
+      document.querySelectorAll('[data-reveal]').forEach(el => {
+        if (el.dataset.revealed) return;
+        el.dataset.revealed = 'pending';
+        if (this.props.revealOnScroll === false) { this.show(el); return; }
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(16px)';
+        el.style.transition = 'opacity .8s cubic-bezier(.22,.7,.25,1), transform .8s cubic-bezier(.22,.7,.25,1)';
+        this.io.observe(el);
+      });
+    };
+    this.scan();
+    this.scanTimer = setInterval(this.scan, 800);
+    setTimeout(() => clearInterval(this.scanTimer), 8000);
+    this.safety = setTimeout(() => document.querySelectorAll('[data-reveal]').forEach(el => this.show(el)), 2000);
+  }
+
+  show(el) { el.style.opacity = '1'; el.style.transform = 'none'; el.dataset.revealed = 'done'; }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.sync);
+    clearInterval(this.scanTimer); clearTimeout(this.safety);
+    if (this.io) this.io.disconnect();
+  }
+
+  baFrom(e) {
+    const el = this.baRef.current; if (!el) return;
+    const r = el.getBoundingClientRect();
+    const p = Math.max(3, Math.min(97, ((e.clientX - r.left) / r.width) * 100));
+    this.setState({ ba: p });
+  }
+
+  scrollGal(dir) {
+    const el = this.galRef.current || document.querySelector('[data-gallery]'); if (!el) return;
+    const kids = Array.from(el.children);
+    if (!kids.length) return;
+    const base = kids[0].offsetLeft;
+    const offsets = kids.map(k => k.offsetLeft - base);
+    const cur = el.scrollLeft;
+    let nearest = 0;
+    offsets.forEach((o, i) => { if (Math.abs(o - cur) < Math.abs(offsets[nearest] - cur)) nearest = i; });
+    const i = Math.max(0, Math.min(offsets.length - 1, nearest + dir));
+    el.scrollTo({ left: offsets[i] });
+  }
+
+  renderVals() {
+    const s = this.state;
+    const hoverMode = (this.props.servicesInteraction || 'clic') === 'hover';
+    const mascot = this.props.mascotVisible !== false;
+
+    const services = [
+      { title: 'Odontología preventiva', body: 'Revisiones, guía de higiene y aplicación de flúor para evitar tratamientos mayores.', photo: 'Foto — revisión preventiva', src: 'assets/bebe-revision.jpg' },
+      { title: 'Limpiezas y selladores', body: 'Limpieza profesional y sellado de fisuras para proteger los molares desde el inicio.', photo: 'Foto — limpieza en sillón', src: 'assets/area-clinica.jpg' },
+      { title: 'Restauraciones estéticas', body: 'Tratamientos conservadores para recuperar dientes afectados por caries o defectos del esmalte.', photo: 'Foto — detalle de restauración', src: 'assets/caso-despues.jpg' },
+      { title: 'Coronas pediátricas', body: 'Protección duradera para dientes con daño extenso, cuidando la función y la estética.', photo: 'Foto — instrumental y corona', src: 'assets/higiene.jpg' },
+      { title: 'Traumatismos dentales', body: 'Atención oportuna ante golpes, fracturas o avulsiones, con seguimiento cercano.', photo: 'Foto — consultorio, atención', src: 'assets/post-consulta.jpg' },
+      { title: 'Ortodoncia interceptiva', body: 'Guiamos el crecimiento a tiempo para simplificar tratamientos futuros.', photo: 'Foto — aparatología pediátrica', src: 'assets/paciente-pequeno.jpg' }
+    ].map((it, i) => {
+      const open = s.openService === i;
+      const select = () => this.setState({ openService: open ? -1 : i });
+      return Object.assign({}, it, {
+        maxH: open ? '220px' : '0px',
+        op: open ? 1 : 0,
+        iconT: open ? 'rotate(45deg)' : 'rotate(0deg)',
+        bg: open ? '#FFF3CE' : '#E4F2FA',
+        border: open ? '#FFD35C' : '#F3E7CB',
+        onSelect: select,
+        onEnter: hoverMode ? (() => this.setState({ openService: i })) : null
+      });
+    });
+
+    const cases = [
+      { label: 'Antes / Después', tag: 'Restauración tipo table top', title: 'Molar permanente joven con defecto del esmalte', diag: 'Primer molar permanente con hipomineralización y pérdida de estructura.', treat: 'Restauración conservadora, estética y mínimamente invasiva, diseñada para proteger la estructura dental remanente.' },
+      { label: 'Caries', tag: 'Odontología restauradora', title: 'Caries interproximal en dentición primaria', diag: 'Lesión detectada en revisión de rutina, sin sintomatología.', treat: 'Remoción selectiva de tejido y restauración del contorno original en una sola sesión tranquila.' },
+      { label: 'Traumatismos', tag: 'Urgencia atendida', title: 'Fractura de incisivo tras una caída', diag: 'Fractura de esmalte y dentina en incisivo central superior.', treat: 'Reconstrucción estética inmediata y seguimiento de la vitalidad del diente durante seis meses.' },
+      { label: 'Molares jóvenes', tag: 'Prevención avanzada', title: 'Sellado de molares recién erupcionados', diag: 'Fisuras profundas con alto riesgo de caries.', treat: 'Selladores de alta adhesión aplicados sin anestesia, con explicación paso a paso al paciente.' },
+      { label: 'Ortodoncia interceptiva', tag: 'Guía de crecimiento', title: 'Mordida cruzada corregida a tiempo', diag: 'Mordida cruzada posterior unilateral a los 7 años.', treat: 'Expansión controlada durante la etapa de crecimiento para evitar tratamientos complejos en la adolescencia.' }
+    ];
+
+    const caseTabs = cases.map((c, i) => ({
+      label: c.label,
+      onSelect: () => this.setState({ caseIdx: i, ba: 48 }),
+      bg: s.caseIdx === i ? '#0B4A68' : 'transparent',
+      color: s.caseIdx === i ? '#FFFBF3' : '#0B4A68',
+      border: s.caseIdx === i ? '#0B4A68' : '#FFD35C'
+    }));
+
+    const faqs = [
+      { q: '¿A qué edad debe ir mi hijo al dentista?', a: 'Idealmente al cumplir su primer año o cuando aparece el primer diente. Esa primera cita es breve, informativa y nos permite prevenir en lugar de tratar.' },
+      { q: '¿Qué pasa en la primera cita?', a: 'Conocemos a tu hijo con calma, revisamos su boca, explicamos cada paso con palabras sencillas y respondemos todas tus dudas. Sin prisas y sin sorpresas.' },
+      { q: '¿Tengo que preparar a mi hijo?', a: 'Basta con hablarle en positivo: venimos a conocer al equipo y a cuidar su sonrisa. Evita frases como “no te va a doler”; nosotros nos encargamos del resto.' },
+      { q: '¿Qué pasa si tiene miedo?', a: 'Trabajamos con técnicas de adaptación progresiva. Nunca forzamos: avanzamos al ritmo de cada niño, y la mayoría termina pidiendo volver.' },
+      { q: '¿Qué debo llevar a la cita?', a: 'Identificación, historial médico relevante y, si los hay, estudios previos. Si tu hijo tiene un objeto que lo tranquiliza, es bienvenido.' },
+      { q: '¿Cada cuánto debe acudir?', a: 'Cada seis meses en la mayoría de los casos. Si hay riesgo de caries o tratamiento en curso, definimos un plan de seguimiento personalizado.' }
+    ].map((f, i) => {
+      const open = s.openFaq === i;
+      return Object.assign({}, f, {
+        maxH: open ? '260px' : '0px',
+        op: open ? 1 : 0,
+        iconT: open ? 'rotate(45deg)' : 'rotate(0deg)',
+        color: open ? '#B22F59' : '#0B4A68',
+        onToggle: () => this.setState({ openFaq: open ? -1 : i })
+      });
+    });
+
+    const quotes = [
+      { text: 'La atención y seguimiento que se le da a los pequeños es excelente, se nota el profesionalismo y pasión por parte de la dentista.', author: 'Reseña en Google · 5★' },
+      { text: 'Excelente atención, muy buen trato y paciencia con los pequeños. Siguen en tratamiento mis dos niños.', author: 'Reseña en Google · 5★' },
+      { text: '¡Excelente atención! A mi hija le encanta asistir a sus consultas.', author: 'Reseña en Google · 5★' },
+      { text: 'Excelente servicio, nos aclaró todas nuestras dudas.', author: 'Reseña en Google · 5★' }
+    ];
+
+    const onePage = true;
+    const waBottom = s.isNarrow ? '90px' : 'clamp(16px,2.4vw,28px)';
+    const igBottom = s.isNarrow ? '156px' : 'clamp(82px,calc(2.4vw + 66px),94px)';
+    const waLink = 'https://wa.me/522228639447?text=' + encodeURIComponent('Hola, me gustaría agendar una cita en Diente de León.');
+
+    return {
+      waLink,
+      waBottom,
+      igBottom,
+      igLink: "https://www.instagram.com/dientedeleon_odontopediatra/",
+      onePage,
+
+      isNarrow: s.isNarrow,
+      isWide: !s.isNarrow,
+      menuOpen: s.isNarrow && s.menuOpen,
+      showStickyCta: s.isNarrow,
+      mascot,
+      toggleMenu: () => this.setState(p => ({ menuOpen: !p.menuOpen })),
+      closeMenu: () => this.setState({ menuOpen: false }),
+
+      concepts: [
+        { num: '01', title: 'Odontología pediátrica', body: 'Formación especializada en bebés, niños y adolescentes: cada edad necesita un abordaje distinto.', photo: 'Paciente pequeña practicando con un peluche', src: 'assets/paciente-pequeno.jpg', pos: '50% 42%', noSrc: false },
+        { num: '02', title: 'Atención personalizada', body: 'Una sola familia por horario, para dedicar el tiempo que cada niño necesita.', photo: 'Recepción del consultorio', src: 'assets/hero-doctora-web.jpg', pos: '50% 50%', noSrc: true },
+        { num: '03', title: 'Experiencias positivas', body: 'Explicamos, jugamos y acompañamos. La confianza se construye desde la primera visita.', photo: 'Dos pacientes con la doctora al terminar su consulta', src: 'assets/post-consulta.jpg', pos: '50% 60%', noSrc: false }
+      ],
+
+      credentials: [
+        { label: 'Especialidad', value: 'Odontopediatría' },
+        { label: 'Ced.', value: '7514706' },
+        { label: 'Ced. Esp.', value: '12171926' },
+        { label: 'Actualización', value: 'Congresos AMOP y AMiT Múnich 2022' },
+        { label: 'Enfoque', value: 'Manejo de conducta y odontología mínimamente invasiva' }
+      ],
+
+      services,
+      servicesHint: hoverMode ? 'Pasa el cursor sobre una tarjeta' : 'Toca una tarjeta para ver el detalle',
+
+      caseTabs,
+      activeCase: cases[s.caseIdx] || cases[0],
+      baRef: this.baRef,
+      baPct: s.ba + '%',
+      baInvW: (10000 / Math.max(s.ba, 1)) + '%',
+      baDown: (e) => { try { e.currentTarget.setPointerCapture(e.pointerId); } catch (err) {} this.setState({ baDrag: true }); this.baFrom(e); },
+      baMove: (e) => { if (this.state.baDrag) this.baFrom(e); },
+      baUp: () => this.setState({ baDrag: false }),
+
+      galRef: this.galRef,
+      galPrev: () => this.scrollGal(-1),
+      galNext: () => this.scrollGal(1),
+      gallery: [
+        { title: 'Recepción', note: 'Luz cálida y espera tranquila', photo: 'Foto — recepción completa', ratio: '3/2.2' },
+        { title: 'Área clínica', note: 'Sillón dental azul', photo: 'Foto — sillón azul y unidad dental', ratio: '3/2.2' },
+        { title: 'Rincón de Chuletón', note: 'Peluches y espera infantil', photo: 'Foto — peluches grandes del consultorio', ratio: '3/3.6' },
+        { title: 'Detalles', note: 'Gorros quirúrgicos estampados', photo: 'Foto — gorros con estampados divertidos', ratio: '3/2.2' },
+        { title: 'Diplomas', note: '“Paciente Estrella” y “Caries Cero”', photo: 'Foto — diplomas ilustrados con Chuletón', ratio: '3/2.2' },
+        { title: 'Higiene', note: 'Protocolos de esterilización', photo: 'Foto — área de esterilización', ratio: '3/3.6' }
+      ],
+
+      faqs,
+
+      tips: [
+        { kicker: 'Prevención', title: '¿Cuándo debe ser la primera visita?', body: 'La respuesta corta: antes de lo que imaginas. Te explicamos por qué.', photo: 'Foto — bebé en revisión', src: null, pos: '50% 50%', noSrc: true },
+        { kicker: 'Alimentación', title: '¿Cuánto azúcar puede consumir mi hijo?', body: 'No es solo cuánta, también cuándo y cómo. Tres reglas fáciles de seguir.', photo: 'Foto — colación saludable', src: null, pos: '50% 50%', noSrc: true },
+        { kicker: 'Rutina', title: '¿Cómo cepillar los dientes de mi pequeño?', body: 'Técnica, cantidad de pasta y trucos para que deje de ser una batalla.', photo: 'Paciente practicando el cepillado con un peluche', src: 'assets/cepillado.jpg', pos: '38% 62%', noSrc: false }
+      ],
+
+      activeQuote: quotes[s.quote],
+      quoteCounter: (s.quote + 1) + ' / ' + quotes.length,
+      quotePrev: () => this.setState(p => ({ quote: (p.quote - 1 + quotes.length) % quotes.length })),
+      quoteNext: () => this.setState(p => ({ quote: (p.quote + 1) % quotes.length })),
+
+      hours: [
+        { day: 'Lunes a viernes', time: '10:00–15:00 · 16:00–19:30' },
+        { day: 'Sábado', time: '7:00–19:00' },
+        { day: 'Domingo', time: '9:00–15:00' }
+      ],
+
+      instagram: [
+        { src: 'assets/dia-premio-paciente.jpg', alt: 'Salimos contentos' },
+        { src: 'assets/dia-primera-visita.jpg', alt: 'Primera visita' },
+        { src: 'assets/dia-cumpleanos.jpg', alt: 'Festejamos cumpleaños' },
+        { src: 'assets/dia-regalo-navidad.jpg', alt: 'Sorpresas en diciembre' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>
